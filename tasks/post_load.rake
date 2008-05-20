@@ -1,5 +1,3 @@
-# $Id$
-
 # This file does not define any rake tasks. It is used to load some project
 # settings if they are not defined by the user.
 
@@ -37,4 +35,3 @@ PROJ.gem.executables ||= PROJ.gem.files.find_all {|fn| fn =~ %r/^bin/}
 PROJ.rdoc.main ||= PROJ.readme_file
 
 PROJ.version ||= MultiExiftool::VERSION
-# EOF

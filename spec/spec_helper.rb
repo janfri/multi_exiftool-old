@@ -1,5 +1,3 @@
-# $Id$
-
 require File.expand_path(
     File.join(File.dirname(__FILE__), %w[.. lib multi_exiftool]))
 
@@ -14,4 +12,12 @@ Spec::Runner.configure do |config|
   # config.mock_with :rr
 end
 
-# EOF
+require 'ostruct'
+
+def fixture name
+  filename = File.join(File.dirname(__FILE__), %w(.. data fixtures), name)
+  o = OpenStruct.new
+  o.stdout = File.read(filename + '.stdout')
+  o.stderr = File.read(filename + '.stderr')
+  o
+end
