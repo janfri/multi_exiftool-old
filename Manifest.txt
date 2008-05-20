@@ -3,12 +3,15 @@ History.txt
 Manifest.txt
 README.txt
 Rakefile
-bin/multi_exiftool
+data/fixtures/file_not_found.stderr
+data/fixtures/file_not_found.stdout
 data/fixtures/read_background.stderr
 data/fixtures/read_background.stdout
 lib/multi_exiftool.rb
+lib/multi_exiftool/parser.rb
 script/generate_fixture.rb
 spec/multi_exiftool_spec.rb
+spec/parser_spec.rb
 spec/spec_helper.rb
 tasks/ann.rake
 tasks/bones.rake
