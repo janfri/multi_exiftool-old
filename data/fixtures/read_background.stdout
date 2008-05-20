@@ -1,0 +1,92 @@
+ExifToolVersion	7.03
+FileName	background.jpg
+Directory	/home/janfri
+FileSize	3 MB
+FileModifyDate	2007:11:29 21:58:13
+FileType	JPEG
+MIMEType	image/jpeg
+ExifByteOrder	Big-endian (Motorola)
+ImageDescription	KONICA MINOLTA DIGITAL CAMERA
+Make	KONICA MINOLTA
+Model	DYNAX 7D
+Orientation	Horizontal (normal)
+XResolution	72
+YResolution	72
+ResolutionUnit	inches
+Software	DYNAX 7D v1.10
+ModifyDate	2005:10:06 15:41:08
+YCbCrPositioning	Centered
+ExposureTime	1/200
+FNumber	9.0
+ExposureProgram	Program AE
+ISO	100
+ExifVersion	0221
+DateTimeOriginal	2005:10:06 15:41:08
+CreateDate	2005:10:06 15:41:08
+ComponentsConfiguration	YCbCr
+BrightnessValue	9
+ExposureCompensation	0
+MaxApertureValue	3.5
+MeteringMode	Multi-segment
+LightSource	Unknown (0)
+Flash	Off
+FocalLength	28.0mm
+SubjectLocation	1504 1000 256 304
+MakerNoteVersion	MLT0
+MinoltaImageSize	Large
+WhiteBalance	Auto
+FocusMode	Manual
+AFPoints	Center
+ISOSetting	100
+FreeMemoryCardImages	127
+Rotation	Horizontal (normal)
+ImageNumber	6
+NoiseReduction	Unknown (2)
+ImageNumber2	60
+ZoneMatchingOn	Off
+CompressedImageSize	2937828
+PreviewImageStart	2985987
+PreviewImageLength	36807
+SceneMode	Standard
+ColorMode	Natural sRGB
+MinoltaQuality	Fine
+FlashExposureComp	0
+ImageStabilization	On
+ZoneMatching	ISO Setting Used
+ColorTemperature	0
+LensID	Tamron 18-200, 28-300 or 80-300mm F3.5-6.3
+UserComment	
+FlashpixVersion	0100
+ColorSpace	sRGB
+ExifImageWidth	3008
+ExifImageLength	2000
+InteropIndex	R98 - DCF basic file (sRGB)
+InteropVersion	0100
+CustomRendered	Normal
+ExposureMode	Auto
+DigitalZoomRatio	0
+FocalLengthIn35mmFormat	42mm
+SceneCaptureType	Standard
+GainControl	None
+Contrast	Normal
+Saturation	Normal
+Sharpness	Normal
+Compression	JPEG (old-style)
+ThumbnailOffset	40306
+ThumbnailLength	3002
+ImageWidth	3008
+ImageHeight	2000
+EncodingProcess	Baseline DCT, Huffman coding
+BitsPerSample	8
+ColorComponents	3
+YCbCrSubSampling	YCbCr4:2:2 (2 1)
+Aperture	9.0
+ImageSize	3008x2000
+PreviewImage	(Binary data 36807 bytes, use -b option to extract)
+ScaleFactor35efl	1.5
+ShutterSpeed	1/200
+ThumbnailImage	(Binary data 3002 bytes, use -b option to extract)
+CircleOfConfusion	0.020 mm
+FocalLength35efl	28.0mm (35mm equivalent: 42.0mm)
+HyperfocalDistance	4.35 m
+LightValue	14.0
