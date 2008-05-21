@@ -12,12 +12,34 @@ Spec::Runner.configure do |config|
   # config.mock_with :rr
 end
 
+
+class Fixture
+
+  DIR = File.join(File.dirname(__FILE__), %w(.. data fixtures))
+
+  def initialize name
+    @name = name
+  end
+
+  def stdout
+    StringIO.new(File.read(File.join(DIR, @name + '.stdout')))
+  end
+
+  def stderr
+    StringIO.new(File.read(File.join(DIR, @name + '.stderr')))
+  end
+
+
+end
+
+
 require 'ostruct'
 
-def fixture name
-  filename = File.join(File.dirname(__FILE__), %w(.. data fixtures), name)
-  o = OpenStruct.new
-  o.stdout = File.read(filename + '.stdout')
-  o.stderr = File.read(filename + '.stderr')
-  o
+def fixture
+  fix = OpenStruct.new
+  Dir[File.join(Fixture::DIR, '*.stdout')].each do |filename|
+    fixture_name = File.basename(filename, '.stdout')
+    fix.send "#{fixture_name}=", Fixture.new(fixture_name)
+  end
+  fix
 end

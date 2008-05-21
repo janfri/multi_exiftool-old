@@ -3,7 +3,7 @@ module MultiExiftool
   class Parser
 
     def parse_read stdout, stderr
-      stderr.empty? 
+      stderr.eof? 
     end
 
   end
