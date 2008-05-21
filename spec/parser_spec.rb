@@ -3,11 +3,11 @@ require 'stringio'
 
 describe MultiExiftool::Parser do
 
-  describe 'parse_read' do
+  before :each do
+    @parser = MultiExiftool::Parser.new
+  end
 
-    before :all do
-      @parser = MultiExiftool::Parser.new
-    end
+  describe 'parse_read' do
 
     it 'should return true for correct input data' do
       read_background = fixture 'read_background'
