@@ -33,13 +33,15 @@ class Fixture
 end
 
 
-require 'ostruct'
-
 def fixture
-  fix = OpenStruct.new
+  fix = {}
+  def fix.method_missing sym, *args
+    return self[sym.to_s] unless self[sym.to_s].nil?
+    raise "Fixture #{sym} does not exist!"
+  end
   Dir[File.join(Fixture::DIR, '*.stdout')].each do |filename|
     fixture_name = File.basename(filename, '.stdout')
-    fix.send "#{fixture_name}=", Fixture.new(fixture_name)
+    fix[fixture_name] = Fixture.new(fixture_name)
   end
   fix
 end
