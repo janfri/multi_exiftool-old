@@ -1,5 +1,3 @@
-# $Id$
-
 require 'rubygems'
 require 'rake'
 require 'rake/clean'
@@ -75,7 +73,7 @@ PROJ = OpenStruct.new(
   :rdoc => OpenStruct.new(
     :opts => [],
     :include => %w(^lib/ ^bin/ ^ext/ \.txt$),
-    :exclude => %w(extconf\.rb$),
+    :exclude => %w(extconf\.rb$ COPYING.txt),
     :main => nil,
     :dir => 'doc',
     :remote_dir => nil
@@ -262,5 +260,3 @@ class Object
     return false
   end
 end
-
-# EOF
