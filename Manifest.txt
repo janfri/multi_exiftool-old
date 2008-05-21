@@ -4,10 +4,10 @@ History.txt
 Manifest.txt
 README.txt
 Rakefile
-data/fixtures/file_not_found.stderr
-data/fixtures/file_not_found.stdout
-data/fixtures/read_background.stderr
-data/fixtures/read_background.stdout
+data/fixtures/read_non_existing_file.stderr
+data/fixtures/read_non_existing_file.stdout
+data/fixtures/read_one_file.stderr
+data/fixtures/read_one_file.stdout
 lib/multi_exiftool.rb
 lib/multi_exiftool/parser.rb
 script/generate_fixture.rb
