@@ -10,7 +10,7 @@ describe MultiExiftool::Parser do
   describe 'parse_read' do
 
     it 'should return true for correct input data' do
-      fix = fixture.read_sea_jpg
+      fix = fixture.read_one_file
       @parser.parse_read(fix.stdout, fix.stderr).should == true
     end
 
