@@ -1,5 +1,4 @@
-require File.expand_path(
-    File.join(File.dirname(__FILE__), %w[.. lib multi_exiftool]))
+require File.expand_path(File.join(File.dirname(__FILE__), %w[.. lib multi_exiftool]))
 
 Spec::Runner.configure do |config|
   # == Mock Framework
@@ -29,19 +28,21 @@ class Fixture
     StringIO.new(File.read(File.join(DIR, @name + '.stderr')))
   end
 
+  # Class instance variable!
+  @hash = {}
 
-end
-
-
-def fixture
-  fix = {}
-  def fix.method_missing sym, *args
-    return self[sym.to_s] unless self[sym.to_s].nil?
-    raise "Fixture #{sym} does not exist!"
-  end
   Dir[File.join(Fixture::DIR, '*.stdout')].each do |filename|
     fixture_name = File.basename(filename, '.stdout')
-    fix[fixture_name] = Fixture.new(fixture_name)
+    @hash[fixture_name] = Fixture.new(fixture_name)
   end
-  fix
+
+  class << self
+
+    def method_missing sym, *args
+      return @hash[sym.to_s] unless @hash[sym.to_s].nil?
+      raise "Fixture #{sym} does not exist!"
+    end
+
+  end
+
 end
