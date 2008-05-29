@@ -9,6 +9,20 @@ describe MultiExiftool::Parser do
       Parser.parse(fix.stdout, fix.stderr).should == []
     end
 
+    describe 'reading one file' do
+
+      before :all do
+        fix = Fixture.read_one_file
+        @result = Parser.parse(fix.stdout, fix.stderr)
+      end
+
+      it 'should return an array with one result' do
+        @result.should be_kind_of(Array)
+        @result.size.should == 1
+      end
+
+    end
+
   end
 
 end
