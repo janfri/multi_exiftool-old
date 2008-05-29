@@ -2,9 +2,10 @@ module MultiExiftool
 
   module Parser
 
+    # :stopdoc:
     REGEXP_TAGLINE = /^(\w+)\t(.*)$/.freeze
-    REGEXP_STRIPLINE = /^={8} /
-
+    REGEXP_STRIPLINE = /^={8} /.freeze
+    # :startdoc:
 
     def self.parse stdout, stderr
       result = []
@@ -15,11 +16,15 @@ module MultiExiftool
         when REGEXP_TAGLINE 
           image_info[$1] = $2
         when REGEXP_STRIPLINE
-          result << image_info unless image_info.empty?
+          unless image_info.empty?
+            result << Result.new(image_info, {})
+          end
           image_info.clear
         end
       end
-      result << image_info unless image_info.empty?
+      unless image_info.empty?
+        result << Result.new(image_info, {})
+      end
       result
     end
 
@@ -28,7 +33,7 @@ module MultiExiftool
       attr_reader :data, :errors
 
       def initialize data, errors
-        @data, @errors = data, errors
+        @data, @errors = data.clone.freeze, errors.clone.freeze
       end
 
     end

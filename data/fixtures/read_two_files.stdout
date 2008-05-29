@@ -1,0 +1,212 @@
+======== /home/janfri/test_photos/2008-02-16_0013.jpe
+ExifToolVersion	7.03
+FileName	2008-02-16_0013.jpe
+Directory	/home/janfri/test_photos
+FileSize	2 MB
+FileModifyDate	2008:02:16 16:10:54
+FileType	JPEG
+MIMEType	image/jpeg
+ExifByteOrder	Big-endian (Motorola)
+ImageDescription	KONICA MINOLTA DIGITAL CAMERA
+Make	KONICA MINOLTA
+Model	DYNAX 7D
+Orientation	Horizontal (normal)
+XResolution	72
+YResolution	72
+ResolutionUnit	inches
+Software	DYNAX 7D v1.10
+ModifyDate	2008:02:16 16:10:52
+YCbCrPositioning	Centered
+ExposureTime	1/250
+FNumber	6.7
+ExposureProgram	Aperture-priority AE
+ISO	100
+ExifVersion	0221
+DateTimeOriginal	2008:02:16 16:10:52
+CreateDate	2008:02:16 16:10:52
+ComponentsConfiguration	YCbCr
+BrightnessValue	8.5
+ExposureCompensation	0
+MaxApertureValue	6.7
+MeteringMode	Center-weighted average
+LightSource	Unknown (0)
+Flash	Off
+FocalLength	300.0mm
+SubjectLocation	1504 1000 256 304
+MakerNoteVersion	MLT0
+MinoltaImageSize	Large
+WhiteBalance	Auto
+FocusMode	Single-shot AF
+AFPoints	Center
+ISOSetting	Auto
+FreeMemoryCardImages	49
+Rotation	Horizontal (normal)
+ImageNumber	6
+NoiseReduction	Unknown (2)
+ImageNumber2	304
+ZoneMatchingOn	Off
+CompressedImageSize	2322879
+PreviewImageStart	2372611
+PreviewImageLength	46166
+SceneMode	Standard
+ColorMode	Adobe RGB
+MinoltaQuality	Fine
+FlashExposureComp	0
+ImageStabilization	On
+ZoneMatching	ISO Setting Used
+ColorTemperature	0
+LensID	Tamron 18-200, 28-300 or 80-300mm F3.5-6.3
+UserComment	
+FlashpixVersion	0100
+ColorSpace	Uncalibrated
+ExifImageWidth	3008
+ExifImageLength	2000
+InteropIndex	R98 - DCF basic file (sRGB)
+InteropVersion	0100
+CustomRendered	Normal
+ExposureMode	Auto
+DigitalZoomRatio	0
+FocalLengthIn35mmFormat	450mm
+SceneCaptureType	Standard
+GainControl	None
+Contrast	Normal
+Saturation	Normal
+Sharpness	Normal
+Compression	JPEG (old-style)
+ThumbnailOffset	40306
+ThumbnailLength	3729
+ProfileCMMType	Win
+ProfileVersion	2.2.0
+ProfileClass	Display Device Profile
+ColorSpaceData	RGB
+ProfileConnectionSpace	XYZ
+ProfileDateTime	2002:05:09 20:45:47
+ProfileFileSignature	acsp
+PrimaryPlatform	Microsoft Corporation
+CMMFlags	Not Embedded, Independent
+DeviceManufacturer	KMHD
+DeviceModel	
+DeviceAttributes	Reflective, Glossy, Positive, Color
+RenderingIntent	Perceptual
+ConnectionSpaceIlluminant	0.96419 1 0.82487
+ProfileCreator	KMHD
+ProfileID	0
+ProfileCopyright	Copyright 2002 Minolta Co.,Ltd.
+ProfileDescription	AdobeRGB1998 ((KONICA MINOLTA CAM
+GreenTRC	(Binary data 1036 bytes, use -b option to extract)
+RedTRC	(Binary data 1036 bytes, use -b option to extract)
+BlueTRC	(Binary data 1036 bytes, use -b option to extract)
+RedMatrixColumn	0.6097 0.3111 0.01949
+GreenMatrixColumn	0.20529 0.62569 0.0609
+BlueMatrixColumn	0.14919 0.06319 0.7446
+MediaWhitePoint	0.95045 1 1.08905
+ImageWidth	3008
+ImageHeight	2000
+EncodingProcess	Baseline DCT, Huffman coding
+BitsPerSample	8
+ColorComponents	3
+YCbCrSubSampling	YCbCr4:2:2 (2 1)
+Aperture	6.7
+ImageSize	3008x2000
+PreviewImage	(Binary data 46166 bytes, use -b option to extract)
+ScaleFactor35efl	1.5
+ShutterSpeed	1/250
+ThumbnailImage	(Binary data 3729 bytes, use -b option to extract)
+CircleOfConfusion	0.020 mm
+FocalLength35efl	300.0mm (35mm equivalent: 450.0mm)
+HyperfocalDistance	670.61 m
+LightValue	13.5
+======== /home/janfri/test_photos/2008-03-01_0004.jpg
+ExifToolVersion	7.03
+FileName	2008-03-01_0004.jpg
+Directory	/home/janfri/test_photos
+FileSize	2 MB
+FileModifyDate	2008:03:13 17:47:05
+FileType	JPEG
+MIMEType	image/jpeg
+ExifByteOrder	Big-endian (Motorola)
+ImageDescription	KONICA MINOLTA DIGITAL CAMERA
+Make	KONICA MINOLTA
+Model	DYNAX 7D
+Orientation	Horizontal (normal)
+XResolution	72
+YResolution	72
+ResolutionUnit	inches
+Software	DYNAX 7D v1.10
+ModifyDate	2008:03:01 13:23:22
+YCbCrPositioning	Centered
+ExposureTime	1/60
+FNumber	4.5
+ExposureProgram	Program AE
+ISO	400
+ExifVersion	0221
+DateTimeOriginal	2008:03:01 13:23:22
+CreateDate	2008:03:01 13:23:22
+ComponentsConfiguration	YCbCr
+BrightnessValue	3.5
+ExposureCompensation	0
+MaxApertureValue	4.5
+MeteringMode	Center-weighted average
+LightSource	Unknown (0)
+Flash	On
+FocalLength	75.0mm
+SubjectLocation	1504 1000 256 304
+MakerNoteVersion	MLT0
+MinoltaImageSize	Large
+WhiteBalance	Auto
+FocusMode	Single-shot AF
+AFPoints	Center
+ISOSetting	Auto
+FreeMemoryCardImages	15
+Rotation	Rotate 270 CW
+ImageNumber	6
+NoiseReduction	Unknown (2)
+ImageNumber2	304
+ZoneMatchingOn	Off
+CompressedImageSize	2191918
+PreviewImageStart	2241539
+PreviewImageLength	35524
+SceneMode	Standard
+ColorMode	Natural sRGB
+MinoltaQuality	Fine
+FlashExposureComp	0
+ImageStabilization	On
+ZoneMatching	ISO Setting Used
+ColorTemperature	0
+LensID	Tamron 18-200, 28-300 or 80-300mm F3.5-6.3
+UserComment	
+FlashpixVersion	0100
+ColorSpace	sRGB
+ExifImageWidth	3008
+ExifImageLength	2000
+InteropIndex	R98 - DCF basic file (sRGB)
+InteropVersion	0100
+CustomRendered	Normal
+ExposureMode	Auto
+DigitalZoomRatio	0
+FocalLengthIn35mmFormat	112mm
+SceneCaptureType	Standard
+GainControl	Low gain up
+Contrast	Normal
+Saturation	Normal
+Sharpness	Normal
+Compression	JPEG (old-style)
+ThumbnailOffset	40306
+ThumbnailLength	3420
+ImageWidth	3008
+ImageHeight	2000
+EncodingProcess	Baseline DCT, Huffman coding
+BitsPerSample	8
+ColorComponents	3
+YCbCrSubSampling	YCbCr4:2:2 (2 1)
+Aperture	4.5
+ImageSize	3008x2000
+PreviewImage	(Binary data 35524 bytes, use -b option to extract)
+ScaleFactor35efl	1.5
+ShutterSpeed	1/60
+ThumbnailImage	(Binary data 3420 bytes, use -b option to extract)
+CircleOfConfusion	0.020 mm
+FocalLength35efl	75.0mm (35mm equivalent: 112.0mm)
+HyperfocalDistance	62.13 m
+LightValue	8.2
+    2 image files read
