@@ -8,6 +8,8 @@ data/fixtures/read_non_existing_file.stderr
 data/fixtures/read_non_existing_file.stdout
 data/fixtures/read_one_file.stderr
 data/fixtures/read_one_file.stdout
+data/fixtures/read_two_files.stderr
+data/fixtures/read_two_files.stdout
 lib/multi_exiftool.rb
 lib/multi_exiftool/parser.rb
 script/generate_fixture.rb
