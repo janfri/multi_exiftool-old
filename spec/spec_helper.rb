@@ -46,3 +46,5 @@ class Fixture
   end
 
 end
+
+include MultiExiftool

@@ -1,9 +1,9 @@
 module MultiExiftool
 
-  class Parser
+  module Parser
 
-    def parse_read stdout, stderr
-      stderr.eof? 
+    def self.parse stdout, stderr
+      []
     end
 
   end

@@ -2,20 +2,11 @@ require File.join(File.dirname(__FILE__), %w[spec_helper])
 
 describe MultiExiftool::Parser do
 
-  before :each do
-    @parser = MultiExiftool::Parser.new
-  end
+  describe 'parse' do
 
-  describe 'parse_read' do
-
-    it 'should return true for correct input data' do
-      fix = Fixture.read_one_file
-      @parser.parse_read(fix.stdout, fix.stderr).should == true
-    end
-
-    it 'should return false whenn errors occur' do
+    it 'should return an empty array when trying to read from a non-existing file' do
       fix = Fixture.read_non_existing_file
-      @parser.parse_read(fix.stdout, fix.stderr).should == false
+      Parser.parse(fix.stdout, fix.stderr).should == []
     end
 
   end
