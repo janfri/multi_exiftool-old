@@ -19,7 +19,7 @@ module MultiExiftool
           unless image_info.empty?
             result << Result.new(image_info, {})
           end
-          image_info.clear
+          image_info = {}
         end
       end
       unless image_info.empty?
@@ -33,7 +33,7 @@ module MultiExiftool
       attr_reader :data, :errors
 
       def initialize data, errors
-        @data, @errors = data.clone.freeze, errors.clone.freeze
+        @data, @errors = data.freeze, errors.freeze
       end
 
     end
