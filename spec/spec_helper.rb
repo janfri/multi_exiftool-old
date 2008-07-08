@@ -1,3 +1,5 @@
+require 'rubygems'
+require 'spec'
 require File.expand_path(File.join(File.dirname(__FILE__), %w[.. lib multi_exiftool]))
 
 Spec::Runner.configure do |config|

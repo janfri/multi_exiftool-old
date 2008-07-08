@@ -1,0 +1,17 @@
+README
+Manifest
+Rakefile
+lib/multi_exiftool.rb
+lib/multi_exiftool/parser.rb
+spec/multi_exiftool_spec.rb
+spec/spec_helper.rb
+spec/parser_spec.rb
+COPYING
+data/fixtures/read_non_existing_file.stderr
+data/fixtures/read_non_existing_file.stdout
+data/fixtures/read_two_files.stderr
+data/fixtures/read_one_file.stderr
+data/fixtures/read_one_file.stdout
+data/fixtures/read_two_files.stdout
+CHANGELOG
+script/generate_fixture.rb
