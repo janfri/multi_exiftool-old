@@ -10,6 +10,14 @@ module MultiExiftool
       @values.each &block
     end
 
+    def [] tag
+      @values[tag]
+    end
+
+    def []= tag, val
+      @value[tag] = val
+    end
+
     private
 
     def method_missing sym, *args

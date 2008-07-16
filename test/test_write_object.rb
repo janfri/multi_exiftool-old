@@ -9,15 +9,14 @@ context 'WriterObject' do
   context 'with some values' do
 
     setup do
-      @author = 'janfri'
-      @comment = 'some_comment'
-      @wo.author = @author
-      @wo.comment = @comment
+      @values = { 'Author' => 'janfri', 'Comment' => 'some_comment' }
+      @write_object = WriteObject.new @values
     end
 
     test 'attributes are correct set' do
-      assert_equal @author, @wo.author
-      assert_equal @comment, @wo.comment
+      @values.each do |key, val|
+        assert_equal val, @write_object[key], "Test: @write_object['#{key}']"
+      end
     end
 
   end
