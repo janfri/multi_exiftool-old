@@ -2,8 +2,12 @@ module MultiExiftool
 
   module MethodAccess
 
-    def initialize
-      @values = {}
+    def initialize values={}
+      @values = values
+    end
+
+    def each &block
+      @values.each &block
     end
 
     private

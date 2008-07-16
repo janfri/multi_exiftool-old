@@ -6,10 +6,6 @@ module MultiExiftool
 
     include MethodAccess
 
-    def each &block
-      @values.each &block
-    end
-
   end
 
 
