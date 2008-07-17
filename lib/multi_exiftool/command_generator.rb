@@ -23,7 +23,7 @@ module MultiExiftool
       end
 
       def write_command_string write_object, *files
-        "#{command} #{std_options} #{write_tag_string(write_object)} #{files.join(' ')}"
+        "#{command} #{write_tag_string(write_object)} #{files.join(' ')}"
       end
 
     end

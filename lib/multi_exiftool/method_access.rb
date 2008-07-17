@@ -15,7 +15,7 @@ module MultiExiftool
     end
 
     def []= tag, val
-      @value[tag] = val
+      @values[tag] = val
     end
 
     private
