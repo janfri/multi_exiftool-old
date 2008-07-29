@@ -3,7 +3,10 @@ module MultiExiftool
   module MethodAccess
 
     def initialize values={}
-      @values = values
+      @values = {}
+      values.each do |tag, val|
+        @values[unify(tag)] = val
+      end
     end
 
     def each &block
@@ -11,17 +14,21 @@ module MultiExiftool
     end
 
     def [] tag
-      @values[tag]
+      @values[unify(tag)]
     end
 
     def []= tag, val
-      @values[tag] = val
+      @values[unify(tag)] = val
+    end
+
+    def unify tag
+      tag.gsub(/[\-_]/, '').downcase
     end
 
     private
 
     def method_missing sym, *args
-      name = sym.id2name
+      name = unify(sym.id2name)
       if name.sub!(/=$/, '')
         @values[name] = args.first
       else
