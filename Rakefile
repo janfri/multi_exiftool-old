@@ -3,6 +3,7 @@ require 'echoe'
 Echoe.new 'multi_exiftool' do |p|
   p.author = 'Jan Friedrich'
   p.email = 'janfri.rubyforge@gmail.com'
-  p.url = 'http://multi_exiftool.rubyforge.org'
+  p.project = 'multiexiftool'
+  p.url = 'http://multiexiftool.rubyforge.org'
   p.development_dependencies = ['yact']
 end
