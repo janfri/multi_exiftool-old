@@ -2,14 +2,25 @@ require 'test_helper'
 
 context 'CommandGenerator' do
 
-  setup do
-    @wo = WriteObject.new
+  context 'extra options' do
+    
+    test 'numerical' do
+      assert_equal '', CommandGenerator.options_string
+      assert_equal '-n', CommandGenerator.options_string(:numerical => true)
+    end
   end
+
+
 
   context 'write_tag_string' do
 
+    setup do
+      @wo = WriteObject.new
+    end
+
+
     test 'is empty for empty WriteObject' do
-      assert_equal '', CommandGenerator.write_tag_string(WriteObject.new)
+      assert_equal '', CommandGenerator.write_tag_string(@wo)
     end
 
     test 'is correct for WriteObject with some values' do
@@ -23,5 +34,7 @@ context 'CommandGenerator' do
     end
 
   end
+
+  # TODO: context 'read_tag_string'
 
 end
