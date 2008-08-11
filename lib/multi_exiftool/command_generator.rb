@@ -12,12 +12,7 @@ module MultiExiftool
 
       def options_string opts={}
         result = []
-        opts.each_key do |opt|
-          case opt
-          when :numerical
-            result << '-n'
-          end
-        end
+        result << '-n' if opts[:numerical]
         result.join(' ')
       end
 
@@ -29,12 +24,18 @@ module MultiExiftool
         opts.join(' ')
       end
 
-      def read_command_string *files
-        "#{command} #{std_options} #{options_string} #{files.join(' ')}"
+      def read_command_string *args
+        files, opts = parse_args(args)
+        "#{command} #{std_options} #{options_string(opts)} #{files.join(' ')}"
       end
 
-      def write_command_string write_object, *files
-        "#{command} #{options_string} #{write_tag_string(write_object)} #{files.join(' ')}"
+      def write_command_string write_object, *args
+        "#{command} #{options_string(opts)} #{write_tag_string(write_object)} #{files.join(' ')}"
+      end
+
+      def parse_args(args)
+        opts = args.last.kind_of?(Hash) ? args.pop : {}
+        [args, opts]
       end
 
     end
