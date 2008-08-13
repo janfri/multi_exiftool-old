@@ -30,6 +30,7 @@ module MultiExiftool
       end
 
       def write_command_string write_object, *args
+        files, opts = parse_args(args)
         "#{command} #{options_string(opts)} #{write_tag_string(write_object)} #{files.join(' ')}"
       end
 
