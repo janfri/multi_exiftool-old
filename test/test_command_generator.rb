@@ -33,6 +33,12 @@ context 'CommandGenerator' do
       assert_match /-comment="#{comment}"/, CommandGenerator.write_tag_string(@wo)
     end
 
+    test 'works with array values aka list tags' do
+      keywords = %w(red yellow green)
+      @wo.keywords = keywords
+      assert_equal %Q(-keywords="red" -keywords="yellow" -keywords="green"), CommandGenerator.write_tag_string(@wo)
+    end
+
   end
 
   # TODO: context 'read_tag_string'
