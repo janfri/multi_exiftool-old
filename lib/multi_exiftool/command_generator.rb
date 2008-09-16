@@ -19,7 +19,10 @@ module MultiExiftool
       def write_tag_string write_object
         opts = []
         write_object.each do |tag, val|
-          opts << %Q(-#{tag}="#{val}")
+          val_array = val.kind_of?(Array) ? val : [val]
+          val_array.each do |v|
+            opts << %Q(-#{tag}="#{v}")
+          end
         end
         opts.join(' ')
       end
