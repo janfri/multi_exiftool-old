@@ -18,7 +18,7 @@ module MultiExiftool
 
       def write_tag_string write_object
         opts = []
-        write_object.each do |tag, val|
+        write_object.to_hash.each do |tag, val|
           opts << %Q(-#{tag}="#{val}")
         end
         opts.join(' ')

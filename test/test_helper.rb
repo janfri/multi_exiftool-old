@@ -2,6 +2,7 @@ begin
   require 'rubygems'
 rescue LoadError
 end
+require 'ostruct'
 require 'yact'
 require 'multi_exiftool'
 

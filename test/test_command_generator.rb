@@ -15,7 +15,7 @@ context 'CommandGenerator' do
   context 'write_tag_string' do
 
     setup do
-      @wo = WriteObject.new
+      @wo = OpenStruct.new
     end
 
 

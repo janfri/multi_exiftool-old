@@ -1,8 +1,15 @@
 require 'multi_exiftool/command_generator'
 require 'multi_exiftool/parser'
 require 'multi_exiftool/read_object'
-require 'multi_exiftool/write_object'
 require 'open3'
+require 'ostruct'
+
+# Monkey patching :D
+class OpenStruct
+  def to_hash
+    @table
+  end
+end
 
 module MultiExiftool
 
