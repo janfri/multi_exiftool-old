@@ -16,9 +16,9 @@ module MultiExiftool
         result.join(' ')
       end
 
-      def write_tag_string write_object
+      def write_tag_string change_set
         opts = []
-        write_object.to_hash.each do |tag, val|
+        change_set.to_hash.each do |tag, val|
           val_array = val.kind_of?(Array) ? val : [val]
           val_array.each do |v|
             opts << %Q(-#{tag}="#{v}")
@@ -32,9 +32,9 @@ module MultiExiftool
         "#{command} #{std_options} #{options_string(opts)} #{files.join(' ')}"
       end
 
-      def write_command_string write_object, *args
+      def write_command_string change_set, *args
         files, opts = parse_args(args)
-        "#{command} #{options_string(opts)} #{write_tag_string(write_object)} #{files.join(' ')}"
+        "#{command} #{options_string(opts)} #{write_tag_string(change_set)} #{files.join(' ')}"
       end
 
       def parse_args(args)
