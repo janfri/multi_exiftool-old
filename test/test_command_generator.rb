@@ -15,22 +15,22 @@ context 'CommandGenerator' do
   context 'write_tag_string' do
 
     setup do
-      @wo = OpenStruct.new
+      @change_set = OpenStruct.new
     end
 
 
     test 'is empty for empty WriteObject' do
-      assert_equal '', CommandGenerator.write_tag_string(@wo)
+      assert_equal '', CommandGenerator.write_tag_string(@change_set)
     end
 
     test 'is correct for WriteObject with some values' do
       author = 'janfri'
       comment = 'some_comment'
-      @wo.author = author
-      @wo.comment = comment
-      assert_equal %Q(-author="#{author}" -comment="#{comment}").size, CommandGenerator.write_tag_string(@wo).size
-      assert_match /-author="#{author}"/, CommandGenerator.write_tag_string(@wo)
-      assert_match /-comment="#{comment}"/, CommandGenerator.write_tag_string(@wo)
+      @change_set.author = author
+      @change_set.comment = comment
+      assert_equal %Q(-author="#{author}" -comment="#{comment}").size, CommandGenerator.write_tag_string(@change_set).size
+      assert_match /-author="#{author}"/, CommandGenerator.write_tag_string(@change_set)
+      assert_match /-comment="#{comment}"/, CommandGenerator.write_tag_string(@change_set)
     end
 
   end
