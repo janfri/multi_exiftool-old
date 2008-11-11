@@ -43,4 +43,23 @@ context 'CommandGenerator' do
 
   # TODO: context 'read_tag_string'
 
+  context 'escape' do
+
+    test 'strings without spaces and backspace are not changed' do
+      simple = 'simple'
+      assert_equal simple, CommandGenerator.escape(simple)
+    end
+
+    test 'strings with spaces and no backslash are simple enclosed in quotes' do
+      string = 'string with spaces'
+      assert_equal %Q("#{string}"), CommandGenerator.escape(string)
+    end
+
+    test 'strings with backslashes are enclosed ba quotes and backspaces are masked' do
+      string = 'backslash\string'
+      assert_equal string.inspect, CommandGenerator.escape(string)
+    end
+
+  end
+
 end

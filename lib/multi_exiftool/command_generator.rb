@@ -42,6 +42,11 @@ module MultiExiftool
         [args, opts]
       end
 
+      def escape string
+        return string unless string =~ /[ \\]/
+        '"' << string.gsub("\\") { "\\\\" } << '"'
+      end
+
     end
 
   end
