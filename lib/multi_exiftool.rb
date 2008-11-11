@@ -18,7 +18,7 @@ module MultiExiftool
   class << self
 
     def read *filenames
-      cmd = CommandGenerator.read_command_string *filenames
+      cmd = CommandGenerator.read_command *filenames
       stdin, stdout, stderr = Open3.popen3(cmd)
       result = Parser.parse(stdout, stderr)
       result.map {|r| ReadObject.new(r.data)}
@@ -26,7 +26,7 @@ module MultiExiftool
 
 
     def write change_set, *filenames
-      cmd = CommandGenerator.write_command_string change_set, *filenames
+      cmd = CommandGenerator.write_command change_set, *filenames
       stdin, stdout, stderr = Open3.popen3(cmd)
       result = Parser.parse(stdout, stderr)
       result.inject(true) {|r| r.errors.empty?}

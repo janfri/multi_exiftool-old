@@ -5,20 +5,20 @@ context 'CommandGenerator' do
   context 'extra options' do
     
     test 'numerical' do
-      assert_equal '', CommandGenerator.options_string
-      assert_equal '-n', CommandGenerator.options_string(:numerical => true)
+      assert_equal [], CommandGenerator.options_array
+      assert_equal ['-n'], CommandGenerator.options_array(:numerical => true)
     end
 
   end
 
-  context 'write_tag_string' do
+  context 'write_tag_array' do
 
     setup do
       @change_set = OpenStruct.new
     end
 
     test 'is empty for empty change set' do
-      assert_equal '', CommandGenerator.write_tag_string(@change_set)
+      assert_equal [], CommandGenerator.write_tag_array(@change_set)
     end
 
     test 'is correct for change set with some values' do
@@ -26,42 +26,40 @@ context 'CommandGenerator' do
       comment = 'some_comment'
       @change_set.author = author
       @change_set.comment = comment
-      assert_equal %Q(-author=#{author} -comment=#{comment}).size, CommandGenerator.write_tag_string(@change_set).size
-      assert_match /-author=#{author}/, CommandGenerator.write_tag_string(@change_set)
-      assert_match /-comment=#{comment}/, CommandGenerator.write_tag_string(@change_set)
+      assert_equal ["-author=#{author}", "-comment=#{comment}"], CommandGenerator.write_tag_array(@change_set)
     end
 
     test 'works with array values aka list tags' do
       keywords = %w(red yellow green)
       @change_set.keywords = keywords
-      assert_equal %Q(-keywords=red -keywords=yellow -keywords=green), CommandGenerator.write_tag_string(@change_set)
+      assert_equal ["-keywords=red", "-keywords=yellow", "-keywords=green"], CommandGenerator.write_tag_array(@change_set)
     end
 
   end
 
-  context 'filenames_string' do
+  context 'filenames_array' do
 
     test 'simple names' do
       filenames = %w(a.jpg b.jpg c.tif)
-      assert_equal filenames.join(' '), CommandGenerator.filenames_string(filenames)
+      assert_equal filenames, CommandGenerator.filenames_array(filenames)
     end
 
     test 'names with spaces' do
       filenames = ['hello world.jpg', 'how are you.tif']
-      assert_equal filenames.map {|fn| '"' << fn << '"'}.join(' '), CommandGenerator.filenames_string(filenames)
+      assert_equal filenames.map {|fn| '"' << fn << '"'}, CommandGenerator.filenames_array(filenames)
     end
 
   end
 
-  context 'read_tag_string' do
+  context 'read_tag_array' do
 
     test 'is empty for empty tag array' do
-      assert_equal '', CommandGenerator.read_tag_string([])
+      assert_equal [], CommandGenerator.read_tag_array([])
     end
 
     test 'is correct for some tags' do
       tags = [:filename, :rotation, :orientation]
-      assert_equal '-filename -rotation -orientation', CommandGenerator.read_tag_string(tags)  
+      assert_equal %w(-filename -rotation -orientation), CommandGenerator.read_tag_array(tags)  
     end
 
   end
@@ -86,6 +84,6 @@ context 'CommandGenerator' do
   end
 
 
-  # TODO: read_command_string, write_command_string
+  # TODO: read_command, write_command
 
 end
