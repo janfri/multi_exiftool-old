@@ -53,7 +53,18 @@ context 'CommandGenerator' do
 
   end
 
-  # TODO: context 'read_tag_string'
+  context 'read_tag_string' do
+
+    test 'is empty for empty tag array' do
+      assert_equal '', CommandGenerator.read_tag_string([])
+    end
+
+    test 'is correct for some tags' do
+      tags = [:filename, :rotation, :orientation]
+      assert_equal '-filename -rotation -orientation', CommandGenerator.read_tag_string(tags)  
+    end
+
+  end
 
   context 'escape' do
 

@@ -17,14 +17,22 @@ module MultiExiftool
       end
 
       def write_tag_string change_set
-        opts = []
+        arr = []
         change_set.to_hash.each do |tag, val|
           val_array = val.kind_of?(Array) ? val : [val]
           val_array.each do |v|
-            opts << %Q(-#{tag}=#{escape(v)})
+            arr << "-#{tag}=#{escape(v)}"
           end
         end
-        opts.join(' ')
+        arr.join(' ')
+      end
+
+      def read_tag_string tags
+        arr = []
+        tags.each do |tag|
+          arr << "-#{tag}"
+        end
+        arr.join(' ')
       end
 
       def filenames_string filenames
@@ -48,7 +56,7 @@ module MultiExiftool
 
       def escape string
         return string unless string =~ /[ \\]/
-        '"' << string.gsub("\\") { "\\\\" } << '"'
+          '"' << string.gsub("\\") { "\\\\" } << '"'
       end
 
     end
