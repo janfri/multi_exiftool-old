@@ -85,4 +85,7 @@ context 'CommandGenerator' do
 
   end
 
+
+  # TODO: read_command_string, write_command_string
+
 end

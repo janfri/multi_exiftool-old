@@ -41,7 +41,8 @@ module MultiExiftool
 
       def read_command_string *args
         files, opts = parse_args(args)
-        "#{command} #{std_options} #{options_string(opts)} #{filenames_string(files)}"
+        only = opts[:only]
+        "#{command} #{std_options} #{options_string(opts)} #{read_tag_string(only)} #{filenames_string(files)}"
       end
 
       def write_command_string change_set, *args
