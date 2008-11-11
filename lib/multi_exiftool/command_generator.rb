@@ -21,20 +21,24 @@ module MultiExiftool
         change_set.to_hash.each do |tag, val|
           val_array = val.kind_of?(Array) ? val : [val]
           val_array.each do |v|
-            opts << %Q(-#{tag}="#{v}")
+            opts << %Q(-#{tag}=#{escape(v)})
           end
         end
         opts.join(' ')
       end
 
+      def filenames_string filenames
+        filenames.map {|fn| escape(fn) }.join(' ')
+      end
+
       def read_command_string *args
         files, opts = parse_args(args)
-        "#{command} #{std_options} #{options_string(opts)} #{files.join(' ')}"
+        "#{command} #{std_options} #{options_string(opts)} #{filenames_string(files)}"
       end
 
       def write_command_string change_set, *args
         files, opts = parse_args(args)
-        "#{command} #{options_string(opts)} #{write_tag_string(change_set)} #{files.join(' ')}"
+        "#{command} #{options_string(opts)} #{write_tag_string(change_set)} #{filenames_string(files)}"
       end
 
       def parse_args(args)
