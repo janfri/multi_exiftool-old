@@ -39,5 +39,3 @@ namespace :reg do
   end
 
 end
-
-

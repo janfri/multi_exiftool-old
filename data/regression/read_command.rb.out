@@ -1,0 +1,16 @@
+exiftool -s -t a.jpg b.jpg c.jpg
+exiftool -s -t "hello world.tif"
+exiftool -s -t a.jpg b.jpg c.jpg "hello world.tif"
+exiftool -s -t a.jpg b.jpg c.jpg "hello world.tif" d.jpg
+exiftool -s -t -n a.jpg b.jpg c.jpg
+exiftool -s -t -n "hello world.tif"
+exiftool -s -t -n a.jpg b.jpg c.jpg "hello world.tif"
+exiftool -s -t -n a.jpg b.jpg c.jpg "hello world.tif" d.jpg
+exiftool -s -t -filename -rotation -orientation a.jpg b.jpg c.jpg
+exiftool -s -t -filename -rotation -orientation "hello world.tif"
+exiftool -s -t -filename -rotation -orientation a.jpg b.jpg c.jpg "hello world.tif"
+exiftool -s -t -filename -rotation -orientation a.jpg b.jpg c.jpg "hello world.tif" d.jpg
+exiftool -s -t -n -filename -rotation -orientation a.jpg b.jpg c.jpg
+exiftool -s -t -n -filename -rotation -orientation "hello world.tif"
+exiftool -s -t -n -filename -rotation -orientation a.jpg b.jpg c.jpg "hello world.tif"
+exiftool -s -t -n -filename -rotation -orientation a.jpg b.jpg c.jpg "hello world.tif" d.jpg

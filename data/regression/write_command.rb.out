@@ -1,0 +1,40 @@
+exiftool a.jpg b.jpg c.jpg
+exiftool "hello world.tif"
+exiftool a.jpg b.jpg c.jpg "hello world.tif"
+exiftool a.jpg b.jpg c.jpg "hello world.tif" d.jpg
+exiftool -author=janfri a.jpg b.jpg c.jpg
+exiftool -author=janfri "hello world.tif"
+exiftool -author=janfri a.jpg b.jpg c.jpg "hello world.tif"
+exiftool -author=janfri a.jpg b.jpg c.jpg "hello world.tif" d.jpg
+exiftool -author=janfri -comment="some comment" a.jpg b.jpg c.jpg
+exiftool -author=janfri -comment="some comment" "hello world.tif"
+exiftool -author=janfri -comment="some comment" a.jpg b.jpg c.jpg "hello world.tif"
+exiftool -author=janfri -comment="some comment" a.jpg b.jpg c.jpg "hello world.tif" d.jpg
+exiftool -author=janfri -comment="some comment" -keywords=a -keywords=b -keywords=c a.jpg b.jpg c.jpg
+exiftool -author=janfri -comment="some comment" -keywords=a -keywords=b -keywords=c "hello world.tif"
+exiftool -author=janfri -comment="some comment" -keywords=a -keywords=b -keywords=c a.jpg b.jpg c.jpg "hello world.tif"
+exiftool -author=janfri -comment="some comment" -keywords=a -keywords=b -keywords=c a.jpg b.jpg c.jpg "hello world.tif" d.jpg
+exiftool -orientation=1 a.jpg b.jpg c.jpg
+exiftool -orientation=1 "hello world.tif"
+exiftool -orientation=1 a.jpg b.jpg c.jpg "hello world.tif"
+exiftool -orientation=1 a.jpg b.jpg c.jpg "hello world.tif" d.jpg
+exiftool -n a.jpg b.jpg c.jpg
+exiftool -n "hello world.tif"
+exiftool -n a.jpg b.jpg c.jpg "hello world.tif"
+exiftool -n a.jpg b.jpg c.jpg "hello world.tif" d.jpg
+exiftool -n -author=janfri a.jpg b.jpg c.jpg
+exiftool -n -author=janfri "hello world.tif"
+exiftool -n -author=janfri a.jpg b.jpg c.jpg "hello world.tif"
+exiftool -n -author=janfri a.jpg b.jpg c.jpg "hello world.tif" d.jpg
+exiftool -n -author=janfri -comment="some comment" a.jpg b.jpg c.jpg
+exiftool -n -author=janfri -comment="some comment" "hello world.tif"
+exiftool -n -author=janfri -comment="some comment" a.jpg b.jpg c.jpg "hello world.tif"
+exiftool -n -author=janfri -comment="some comment" a.jpg b.jpg c.jpg "hello world.tif" d.jpg
+exiftool -n -author=janfri -comment="some comment" -keywords=a -keywords=b -keywords=c a.jpg b.jpg c.jpg
+exiftool -n -author=janfri -comment="some comment" -keywords=a -keywords=b -keywords=c "hello world.tif"
+exiftool -n -author=janfri -comment="some comment" -keywords=a -keywords=b -keywords=c a.jpg b.jpg c.jpg "hello world.tif"
+exiftool -n -author=janfri -comment="some comment" -keywords=a -keywords=b -keywords=c a.jpg b.jpg c.jpg "hello world.tif" d.jpg
+exiftool -n -orientation=1 a.jpg b.jpg c.jpg
+exiftool -n -orientation=1 "hello world.tif"
+exiftool -n -orientation=1 a.jpg b.jpg c.jpg "hello world.tif"
+exiftool -n -orientation=1 a.jpg b.jpg c.jpg "hello world.tif" d.jpg
