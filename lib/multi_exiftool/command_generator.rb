@@ -36,12 +36,12 @@ module MultiExiftool
       end
 
       def filenames_array filenames
-        filenames.map {|fn| escape(fn) }
+        filenames.flatten.map {|fn| escape(fn) }
       end
 
       def read_command *args
         files, opts = parse_args(args)
-        only = opts[:only]
+        only = opts[:only] || []
         [command, std_options, options_array(opts), read_tag_array(only), filenames_array(files)].flatten.join(' ')
       end
 
