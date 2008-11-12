@@ -17,4 +17,20 @@ context 'ReadObject' do
     assert_equal @read_object['Author'], @read_object.author
   end
 
+  context 'Semantical values' do
+
+    setup do
+      @values = {'String' => 'some string', 'Integer' => '123', 'Float' => '1.23'}
+      @read_object = ReadObject.new @values
+    end
+
+    [String, Integer, Float].each do |klass|
+      test klass.to_s do
+        assert_kind_of klass, @read_object[klass.to_s]
+      end
+
+    end
+
+  end
+
 end
