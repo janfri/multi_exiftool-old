@@ -7,6 +7,6 @@ filenames = [['a.jpg', 'b.jpg', 'c.jpg'], ['hello world.tif'], ['a.jpg', 'b.jpg'
 
 read_opts.each do |opts|
   filenames.each do |fnames|
-    puts MultiExiftool::CommandGenerator.read_command fnames, opts
+    puts MultiExiftool::CommandGenerator.read_command(fnames, opts)
   end
 end

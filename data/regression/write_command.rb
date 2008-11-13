@@ -10,7 +10,7 @@ filenames = [['a.jpg', 'b.jpg', 'c.jpg'], ['hello world.tif'], ['a.jpg', 'b.jpg'
 write_opts.each do |opts|
   changesets.each do |cs|
     filenames.each do |fnames|
-      puts MultiExiftool::CommandGenerator.write_command cs, fnames, opts
+      puts MultiExiftool::CommandGenerator.write_command(cs, fnames, opts)
     end
   end
 end
