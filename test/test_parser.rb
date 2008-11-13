@@ -1,10 +1,10 @@
 require 'test_helper'
 
-context 'parse' do
+context 'Parser.parse' do
 
   context 'read_non_existing_file' do
 
-    test 'should return an empty array' do
+    test 'returns an empty array' do
       fix = Fixture.read_non_existing_file
       assert_equal [], Parser.parse(fix.stdout, fix.stderr)
     end
@@ -18,7 +18,7 @@ context 'parse' do
       @result = Parser.parse(fix.stdout, fix.stderr)
     end
 
-    test 'should return an array with one result of meaningful data' do
+    test 'returns an array with one result of meaningful data' do
       assert_kind_of Array, @result
       assert_equal 1, @result.size
       data = @result.first.data
@@ -35,7 +35,7 @@ context 'parse' do
       @result = Parser.parse(fix.stdout, fix.stderr)
     end
 
-    test 'should return an array with two results of meaningful data' do
+    test 'returns an array with two results of meaningful data' do
       assert_kind_of Array, @result
       assert_equal 2, @result.size 
       data1 = @result[0].data
