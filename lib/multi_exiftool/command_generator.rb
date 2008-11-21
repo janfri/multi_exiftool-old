@@ -3,11 +3,12 @@ module MultiExiftool
   module CommandGenerator
 
     @command = 'exiftool'
-    @std_options = '-s -t'
+    @std_opts_read = '-s -t'
+    @std_opts_write = '-overwrite_original'
 
     class << self
 
-      attr_reader :std_options
+      attr_reader :std_opts_read, :std_opts_write
       attr_accessor :command
 
       def options_array opts={}
@@ -42,12 +43,12 @@ module MultiExiftool
       def read_command *args
         files, opts = parse_args(args)
         only = opts[:only] || []
-        [command, std_options, options_array(opts), read_tag_array(only), filenames_array(files)].flatten.join(' ')
+        [command, std_opts_read, options_array(opts), read_tag_array(only), filenames_array(files)].flatten.join(' ')
       end
 
       def write_command change_set, *args
         files, opts = parse_args(args)
-        [command, options_array(opts), write_tag_array(change_set), filenames_array(files)].flatten.join(' ')
+        [command, std_opts_write, options_array(opts), write_tag_array(change_set), filenames_array(files)].flatten.join(' ')
       end
 
       def parse_args(args)
