@@ -10,7 +10,9 @@ end
 
 namespace :reg do
 
-  DATA_DIR = File.join(File.dirname(__FILE__), %w(data regression))
+  ROOT_DIR = File.dirname(__FILE__)
+  SCRIPT_DIR = File.join(ROOT_DIR, 'script')
+  DATA_DIR = File.join(ROOT_DIR, %w(data regression))
   RB_FILES = File.join(DATA_DIR, '*.rb')
 
   desc 'Generate regression data'
@@ -34,7 +36,7 @@ namespace :reg do
     FileList[RB_FILES].each do |src|
       target = target(src)
       puts '-' * 8 << File.basename(src)
-      sh "ruby #{src} | diff #{target} - ; echo x >/dev/null"
+      sh "ruby #{src} | wdiff -n #{target} - | #{File.join(SCRIPT_DIR, 'colorize.rb')}"# ; echo x >/dev/null"
     end
   end
 
