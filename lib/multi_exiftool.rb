@@ -25,7 +25,7 @@ module MultiExiftool
     def read *filenames
       cmd = CommandGenerator.read_command *filenames
       stdin, stdout, stderr = Open3.popen3(cmd)
-      result = Parser.parse(stdout, stderr)
+      result = Parser.new.parse_reading(stdout, stderr).result
       result.map {|r| ReadObject.new(r.data)}
     end
 
@@ -34,7 +34,7 @@ module MultiExiftool
       cmd = CommandGenerator.write_command change_set, *filenames
       @logger.debug cmd
       stdin, stdout, stderr = Open3.popen3(cmd)
-      result = Parser.parse(stdout, stderr)
+      result = Parser.new.parse_writing(stdout, stderr).result
       result.inject(true) {|r| r.errors.empty?}
     end
 

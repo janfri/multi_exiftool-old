@@ -1,21 +1,28 @@
 require 'test_helper'
 
-context 'Parser.parse' do
+context 'Parser#parse' do
+
+  setup do
+    @parser = Parser.new
+  end
 
   context 'read_non_existing_file' do
 
-    test 'returns an empty array' do
+    test 'returns an empty result' do
       fix = Fixture.read_non_existing_file
-      assert_equal [], Parser.parse(fix.stdout, fix.stderr)
+      @parser.parse_reading(fix.stdout, fix.stderr)
+      assert_equal [], @parser.result
     end
 
+    # TODO: Testing errors
   end
 
   context 'read_one_file' do
 
     setup do
       fix = Fixture.read_one_file
-      @result = Parser.parse(fix.stdout, fix.stderr)
+      @parser.parse_reading(fix.stdout, fix.stderr)
+      @result = @parser.result
     end
 
     test 'returns an array with one result of meaningful data' do
@@ -32,7 +39,8 @@ context 'Parser.parse' do
 
     setup do
       fix = Fixture.read_two_files
-      @result = Parser.parse(fix.stdout, fix.stderr)
+      @parser.parse_reading(fix.stdout, fix.stderr)
+      @result = @parser.result
     end
 
     test 'returns an array with two results of meaningful data' do
