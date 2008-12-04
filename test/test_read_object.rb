@@ -33,4 +33,22 @@ context 'ReadObject' do
 
   end
 
+  context 'path' do
+
+    test 'raising MultiExiftool::Error if no path found' do
+      assert_raises MultiExiftool::Error do
+        @read_object.path
+      end
+    end
+
+    test 'returns the full path' do
+      full_path = __FILE__
+      dir = File.dirname(__FILE__)
+      filename = File.basename(__FILE__)
+      read_object = ReadObject.new('Directory' => dir, 'Filename' => filename)
+      assert_equal full_path, read_object.path
+    end
+
+  end
+
 end

@@ -16,6 +16,8 @@ end
 
 module MultiExiftool
 
+  class Error < Exception; end
+
   class << self
 
     attr_accessor :logger

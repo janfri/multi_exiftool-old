@@ -20,6 +20,13 @@ module MultiExiftool
       convert(@values[unify(tag)])
     end
 
+    def path
+      dir = self.directory
+      filename = self.filename
+      raise Error.new('No path found.') if dir.nil? || filename.nil?
+      File.join(dir, filename)
+    end
+
     class << self
       attr_accessor :converting_rules
     end
