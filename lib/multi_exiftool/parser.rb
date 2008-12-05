@@ -20,25 +20,15 @@ module MultiExiftool
           image_info[$1] = $2
         when REGEXP_STRIPLINE
           unless image_info.empty?
-            @result << Result.new(image_info, {})
+            @result << image_info
           end
           image_info = {}
         end
       end
       unless image_info.empty?
-        @result << Result.new(image_info, {})
+        @result << image_info
       end
       true
-    end
-
-    class Result
-
-      attr_reader :data, :errors
-
-      def initialize data, errors
-        @data, @errors = data.freeze, errors.freeze
-      end
-
     end
 
   end
