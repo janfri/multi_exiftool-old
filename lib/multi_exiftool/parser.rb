@@ -31,7 +31,16 @@ module MultiExiftool
       while !stderr.eof
         @errors << stderr.readline.chomp
       end
-      true
+      self
+    end
+
+    def parse_writing stdout, stderr
+      @result = []
+      @errors =[]
+      while ! stderr.eof
+        @errors << stderr.readline.chomp
+      end
+      self
     end
 
   end
