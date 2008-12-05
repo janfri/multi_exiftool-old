@@ -28,6 +28,9 @@ module MultiExiftool
       unless image_info.empty?
         @result << image_info
       end
+      while !stderr.eof
+        @errors << stderr.readline.chomp
+      end
       true
     end
 

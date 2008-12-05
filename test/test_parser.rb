@@ -1,6 +1,6 @@
 require 'test_helper'
 
-context 'Parser#parse' do
+context 'Parser#parse_reading' do
 
   setup do
     @parser = Parser.new
@@ -13,11 +13,15 @@ context 'Parser#parse' do
       @parser.parse_reading(fix.stdout, fix.stderr)
     end
 
-    test 'returns an empty result' do
+    test 'has an empty result' do
       assert_equal [], @parser.result
     end
 
-    # TODO: Testing errors
+    test 'has one meaningfull error' do
+      assert_equal 1, @parser.errors.size
+      assert_match /File not found/, @parser.errors.join
+    end
+
   end
 
   context 'read_one_file' do
@@ -28,12 +32,16 @@ context 'Parser#parse' do
       @result = @parser.result
     end
 
-    test 'returns an array with one result of meaningful data' do
+    test 'has one meaningful result' do
       assert_kind_of Array, @result
       assert_equal 1, @result.size
       data = @result.first
       assert_equal '2005:10:06 15:41:08', data['DateTimeOriginal']
       assert_equal '9.0', data['FNumber'] 
+    end
+
+    test 'has no errors' do
+      assert_empty @parser.errors
     end
 
   end
@@ -46,7 +54,7 @@ context 'Parser#parse' do
       @result = @parser.result
     end
 
-    test 'returns an array with two results of meaningful data' do
+    test 'has two meaningful results' do
       assert_kind_of Array, @result
       assert_equal 2, @result.size 
       data1 = @result[0]
@@ -55,6 +63,10 @@ context 'Parser#parse' do
       data2 = @result[1]
       assert_equal '2008:03:01 13:23:22', data2['DateTimeOriginal'] 
       assert_equal '4.5', data2['FNumber'] 
+    end
+
+    test 'has no errors' do
+      assert_empty @parser.errors
     end
 
   end
