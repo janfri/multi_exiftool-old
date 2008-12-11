@@ -8,6 +8,8 @@ module MultiExiftool
 
     class << self
 
+      include MultiExiftool::Helper
+
       attr_reader :std_opts_read, :std_opts_write
       attr_accessor :command
 
@@ -30,6 +32,7 @@ module MultiExiftool
 
       def read_tag_array tags
         arr = []
+        tags = arrify(tags)
         tags.each do |tag|
           arr << "-#{tag}"
         end

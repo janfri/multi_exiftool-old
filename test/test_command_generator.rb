@@ -37,6 +37,23 @@ context 'CommandGenerator' do
 
   end
 
+  context 'read_tag_array' do
+
+    context 'parameter only' do
+
+      test 'array of tags' do
+        assert_equal %w(-fnumber -iso), CommandGenerator.read_tag_array([:fnumber, :iso])
+        assert_equal ['-focallength'], CommandGenerator.read_tag_array([:focallength])
+      end
+
+      test 'single tag' do
+        assert_equal ['-focallength'], CommandGenerator.read_tag_array(:focallength)
+      end
+
+    end
+
+  end
+
   context 'filenames_array' do
 
     test 'simple names' do
