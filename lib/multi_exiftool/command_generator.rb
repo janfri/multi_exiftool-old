@@ -24,7 +24,7 @@ module MultiExiftool
         change_set.to_hash.each do |tag, val|
           val_array = val.kind_of?(Array) ? val : [val]
           val_array.each do |v|
-            arr << "-#{tag}=#{escape(v)}"
+            arr << "-#{unify(tag)}=#{escape(v)}"
           end
         end
         arr
@@ -34,7 +34,7 @@ module MultiExiftool
         arr = []
         tags = arrify(tags)
         tags.each do |tag|
-          arr << "-#{tag}"
+          arr << "-#{unify(tag)}"
         end
         arr
       end

@@ -35,6 +35,11 @@ context 'CommandGenerator' do
       assert_equal ["-keywords=red", "-keywords=yellow", "-keywords=green"], CommandGenerator.write_tag_array(@change_set)
     end
 
+    test 'handle snail_case tags' do
+      @change_set.focal_length = 35
+      assert_equal ['-focallength=35'], CommandGenerator.write_tag_array(@change_set)
+    end
+
   end
 
   context 'read_tag_array' do
@@ -48,6 +53,10 @@ context 'CommandGenerator' do
 
       test 'single tag' do
         assert_equal ['-focallength'], CommandGenerator.read_tag_array(:focallength)
+      end
+
+      test 'snailcase tags' do
+        assert_equal ['-focallength'], CommandGenerator.read_tag_array(:focal_length)
       end
 
     end
