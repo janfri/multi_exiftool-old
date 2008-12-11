@@ -2,6 +2,8 @@ module MultiExiftool
 
   class ReadObject
 
+    include MultiExiftool::Helper
+
     def initialize values={}
       @values = {}
       values.each do |tag, val|
@@ -32,10 +34,6 @@ module MultiExiftool
     end
 
     private
-
-    def unify tag
-      tag.gsub(/[\-_]/, '').downcase
-    end
 
     def convert val
       result = val
